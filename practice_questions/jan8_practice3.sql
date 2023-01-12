@@ -90,6 +90,7 @@ FROM (
     sum(tran_ammt) over(partition by state_id) as total_tran_per_state
     from cards_ingest.tran_fact) inq
 WHERE tran_ammt > 1000
+-- added a fake line
 
 Note : Here in case 1 you are including all the transaction to show the count but later you have tu just include only where >1000
 4. in cust_dim_details change all the name from Mike to Nike where cust_last_name !='dogeee'
